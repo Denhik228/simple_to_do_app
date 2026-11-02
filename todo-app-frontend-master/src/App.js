@@ -220,15 +220,13 @@ function App() {
               <button
                 className={activeView === 'tasks' ? 'switch-btn active' : 'switch-btn'}
                 onClick={() => setActiveView('tasks')}
-                type="button"
-              >
+                type="button">
                 Задачи
               </button>
               <button
                 className={activeView === 'categories' ? 'switch-btn active' : 'switch-btn'}
                 onClick={() => setActiveView('categories')}
-                type="button"
-              >
+                type="button">
                 Категории
               </button>
             </div>
@@ -300,8 +298,7 @@ function App() {
                         className={getTaskCompleted(task) ? 'toggle done' : 'toggle'}
                         onClick={() => handleToggleCompleted(task)}
                         aria-label="Переключить статус"
-                        type="button"
-                      >
+                        type="button">
                         {getTaskCompleted(task) ? '✓' : ''}
                       </button>
 
@@ -309,14 +306,19 @@ function App() {
                         <span className={getTaskCompleted(task) ? 'task-title done' : 'task-title'}>
                           {getTaskTitle(task)}
                         </span>
-                        <span className="task-state">{getTaskCompleted(task) ? 'Выполнена' : 'В работе'}</span>
+                        <span className="task-state">
+                          {getTaskCompleted(task) ? 'Выполнена' : 'В работе'}
+                        </span>
                       </div>
 
                       <div className="task-actions">
                         <button className="btn" onClick={() => handleTaskEdit(task)} type="button">
                           Изменить
                         </button>
-                        <button className="btn btn-danger" onClick={() => handleTaskDelete(task.id)} type="button">
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => handleTaskDelete(task.id)}
+                          type="button">
                           Удалить
                         </button>
                       </div>
@@ -353,7 +355,9 @@ function App() {
                 </button>
               </div>
 
-              {categoryStatusMessage && <div className="status-message">{categoryStatusMessage}</div>}
+              {categoryStatusMessage && (
+                <div className="status-message">{categoryStatusMessage}</div>
+              )}
             </section>
 
             <section className="panel tasks-panel">
@@ -382,14 +386,16 @@ function App() {
                       </div>
 
                       <div className="task-actions">
-                        <button className="btn" onClick={() => handleCategoryEdit(category)} type="button">
+                        <button
+                          className="btn"
+                          onClick={() => handleCategoryEdit(category)}
+                          type="button">
                           Изменить
                         </button>
                         <button
                           className="btn btn-danger"
                           onClick={() => handleCategoryDelete(category.id)}
-                          type="button"
-                        >
+                          type="button">
                           Удалить
                         </button>
                       </div>
