@@ -9,3 +9,4 @@ pydantic_core~=2.50.2
 click~=8.5.0
 uvicorn~=0.54.0
 annotated-types~=0.8.0
+redis~=8.1.0
